@@ -1,0 +1,5 @@
+# webdev-server/.gitignore
+node_modules
+.env
+.env.development
+.idea
