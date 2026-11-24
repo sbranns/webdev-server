@@ -10,6 +10,7 @@ import AssignmentRoutes from "./Kambaz/Assignments/routes";
 import EnrollmentsDao from "./Kambaz/Enrollments/dao";
 import EnrollmentsRoutes from "./Kambaz/Enrollments/routes";
 import Hello from "./Hello";
+import Lab5 from "./Lab5";
 const app = express();
 app.use(
   cors({
@@ -31,6 +32,7 @@ if (process.env.SERVER_ENV !== "development") {
 }
 app.use(session(sessionOptions));
 app.use(express.json());
+Lab5(app);
 UserRoutes(app, db);
 CourseRoutes(app, db);
 ModuleRoutes(app, db);
