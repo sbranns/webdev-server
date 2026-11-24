@@ -9,6 +9,7 @@ import ModuleRoutes from "./Kambaz/Modules/routes";
 import AssignmentRoutes from "./Kambaz/Assignments/routes";
 import EnrollmentsDao from "./Kambaz/Enrollments/dao";
 import EnrollmentsRoutes from "./Kambaz/Enrollments/routes";
+import Hello from "./Hello";
 const app = express();
 app.use(
   cors({
@@ -30,6 +31,7 @@ if (process.env.SERVER_ENV !== "development") {
 }
 app.use(session(sessionOptions));
 app.use(express.json());
+Hello(app);
 UserRoutes(app, db);
 CourseRoutes(app, db);
 ModuleRoutes(app, db);
